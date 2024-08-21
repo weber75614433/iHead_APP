@@ -2,6 +2,7 @@ package com.example.ihead_beta.activity
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
@@ -22,18 +23,25 @@ class MainActivitySittingCorrection : AppCompatActivity() {
         setContentView(binding.root)
 
         val dialog = FragmentSittingCorrectionTips()
+        val imageView = findViewById<ImageView>(R.id.imageViewSittingCorrection)
+        val textViewIdealCVA = findViewById<TextView>(R.id.idealCVA)
+        val textViewCurrentCVA = findViewById<TextView>(R.id.currentCVA)
+        val condition = true
 
         val button = findViewById<Button>(R.id.buttonSittingCorrection)
         button.setOnClickListener {
             dialog.show(supportFragmentManager, "FragmentSittingCorrectionTips")
+            dialog.show(supportFragmentManager, "FragmentSittingCorrectionResult")
         }
 
-        val textViewCurrentCVA = findViewById<TextView>(R.id.currentCVA)
         textViewCurrentCVA.text = "45"
+        !condition
 
-        val textViewIdealCVA = findViewById<TextView>(R.id.idealCVA)
         textViewIdealCVA.text = "60"
 
+        if (!condition){
+            imageView.setImageResource(R.drawable.wrongsitting)
+        }
 
     }
 

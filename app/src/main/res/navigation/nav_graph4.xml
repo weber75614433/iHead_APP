@@ -9,7 +9,7 @@
         android:id="@+id/First3Fragment"
         android:name="com.example.ihead_beta.ui.theme.First3Fragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first3">
+        tools:layout="@layout/fragment_sitting_correction_result">
 
         <action
             android:id="@+id/action_First3Fragment_to_Second3Fragment"
